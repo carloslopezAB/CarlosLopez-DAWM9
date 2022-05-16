@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A01 -Imatges-Galeria modal</title>
+
+  <link rel="stylesheet" href="css/modal.css">
+  
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Galeria tipus Pop-Up</h1>
+
+    <div class="image-container">
+      <div class="image"><img src="img/img1.jpeg" alt="Tucan"></div>
+      <div class="image"><img src="img/img2.jpg" alt="Granota exotica"></div>
+      <div class="image"><img src="img/img3.jpg" alt="Os Rentador"></div>
+      <div class="image"><img src="img/img4.jpg" alt="Girafa"></div>
+      <div class="image"><img src="img/img5.jpg" alt="Lleo"></div>
+      <div class="image"><img src="img/img6.jpg" alt="Gos"></div>
+    </div>
+
+    <div class="popup-image">
+      <span>&times;</span>
+      <img src="img/img1.jpeg" alt="">
+    </div>
+
+
+    <script>
+
+      document.querySelectorAll('.image-container img').forEach(image => {
+        image.onclick = () => {
+          document.querySelector('.popup-image').style.display = 'block';
+          document.querySelector('.popup-image img').src = image.getAttribute('src');
+        }
+      });
+
+      document.querySelector('.popup-image span').onclick = () => {
+        document.querySelector('.popup-image').style.display = 'none';
+      }
+
+    </script>
+
+  </div>
+</body>
+
+</html>
